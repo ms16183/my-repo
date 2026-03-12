@@ -1,13 +1,18 @@
-# ワークフロー名
 name: Hello
-# トリガ: push
-on: push
-# ジョブ
+on: 
+  # 手動実行イベント
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        default: Alice
+        required: true
+        description: Your name here.
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - run: echo "Hello, ${{ inputs.name }}."
       - uses: actions/checkout@v4
   bye:
     runs-on: ubuntu-latest
