@@ -1,0 +1,16 @@
+# ワークフロー名
+name: Hello
+# トリガ: push
+on: push
+# ジョブ
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world!"
+      - uses: actions/checkout@v4
+  bye:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Bye"
+      - uses: actions/checkout@v4
