@@ -1,0 +1,10 @@
+name: cond
+on: push
+jobs:
+  cond:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "It's ${{ runner.os }}"
+      if: ${{ contains(runner.os, 'Linux') }}
+    - run: echo "It is not Linux."
+      if: ${{ failure() }}
