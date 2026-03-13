@@ -1,0 +1,19 @@
+name: Contexts
+on: push
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: main
+    steps:
+      - run: echo "${{ github.actor  }}"
+      - run: echo "${{ github.run_id }}"
+      - run: echo "${{ github.server_url }}"
+      - run: echo "${{ github.repository_id  }}"
+      - run: echo "${{ github.repository_owner }}"
+      - run: echo "${{ github.repositoryUrl }}"
+      - run: echo "${{ runner.name  }}"
+      - run: echo "${{ runner.os }}"
+      - run: echo "${{ runner.arch }}"
+      - run: echo "${BRANCH}"
+      - run: echo "${{ env.BRANCH }}"
